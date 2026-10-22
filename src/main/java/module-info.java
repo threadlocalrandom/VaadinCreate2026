@@ -8,6 +8,6 @@ open module org.tlr {
     requires vaadin.ordered.layout.flow;
     requires io.vidocq.foy.api;
     requires jakarta.servlet;
-
-    exports org.tlr;
+    // Vaadin creates the routes by reflection.
+    opens org.tlr;
 }

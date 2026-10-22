@@ -1,0 +1,61 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/heisenberg-logo.png" alt="Heisenberg" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Heisenberg is the MicroProfile Fault Tolerance 4.1 implementation of the Vidocq ecosystem. It applies the <code>@Retry</code>, <code>@Timeout</code>, <code>@CircuitBreaker</code>, <code>@Bulkhead</code>, <code>@Fallback</code> and <code>@Asynchronous</code> policies to CDI beans through a single interceptor, wired into <a href="../../vauban/0.3.0/index.html" class="xref page">Vauban</a> for the container and <a href="../../ravel/0.3.0/index.html" class="xref page">Ravel</a> for configuration. Goal: 100% conformance to the MicroProfile Fault Tolerance 4.1 TCK (currently 463/463), zero external dependency beyond the specs, strict Java Modules, jlink-ready.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Werner Heisenberg (1901-1976)</strong>, German physicist. In 1927 he formulated the uncertainty principle, cornerstone of quantum mechanics: a particle&#8217;s position and momentum cannot be simultaneously measured with arbitrary precision — <code>Δp · Δx ≥ ℏ/2</code>. Nobel Prize in Physics 1932 "for the creation of quantum mechanics". See <a href="https://en.wikipedia.org/wiki/Werner_Heisenberg">Wikipedia</a>.</p>
+</div>
+<div class="paragraph">
+<p>Heisenberg established that <strong>uncertainty is intrinsic, not a flaw of the instrument</strong>. The Heisenberg runtime encapsulates the uncertainty inherent in network calls and remote services — variable latency, transient failures, overload — and responds with formally composable policies, ordered like non-commutative operators.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Heisenberg, the physicist</th>
+<th class="tableblock halign-left valign-top">Heisenberg, the runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Uncertainty principle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The network call is intrinsically uncertain — success is not predetermined.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non-commutative observable matrices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non-commutative policies: <code>@Retry ∘ @Timeout ≠ @Timeout ∘ @Retry</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Matrix mechanics (Göttingen, 1925)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Formal composition of aspects — interceptor chain ordered by spec §2.5.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Inequality <code>Δp · Δx ≥ ℏ/2</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intrinsic latency × throughput bound (Little&#8217;s Law) — a <code>@Bulkhead</code> makes it explicit.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wave packet collapse</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>@CircuitBreaker</code> opens — state becomes discrete (OPEN), subsequent calls are short-circuited.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Eigenstates and compatible observables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compatible policies, composable in a single canonical order.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

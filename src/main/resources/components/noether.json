@@ -1,0 +1,10 @@
+﻿{
+    "id":  "noether",
+    "name":  "Noether",
+    "role":  "Jakarta Persistence 3.2 implementation, extracted from Mansart (in development, not released yet)",
+    "repository":  "https://codefloe.com/Vidocq/noether",
+    "docUrl":  "https://doc.vidocq.dev/noether/dev/index.html",
+    "logo":  "images/noether-logo.png",
+    "preambleHtml":  "\u003cdiv class=\"paragraph lead\"\u003e\r\n\u003cp\u003eNoether implements Jakarta Persistence 3.2 with strict Java Modules, generated\r\nentity access and virtual-thread JDBC execution. Its provisional Validation\r\nprovider is a local test/TCK stopgap, not a complete implementation.\u003c/p\u003e\r\n\u003c/div\u003e",
+    "originHtml":  "\u003cdiv class=\"sect1\"\u003e\r\n\u003ch2 id=\"origin-of-the-name\"\u003e\u003ca class=\"anchor\" href=\"#origin-of-the-name\"\u003e\u003c/a\u003eOrigin of the name\u003c/h2\u003e\r\n\u003cdiv class=\"sectionbody\"\u003e\r\n\u003cdiv class=\"paragraph\"\u003e\r\n\u003cp\u003eThe project honours \u003cstrong\u003eEmmy Noether (1882–1935)\u003c/strong\u003e, the German mathematician whose\r\nwork reshaped abstract algebra and established the connection between\r\nsymmetries and conservation laws.\u003c/p\u003e\r\n\u003c/div\u003e\r\n\u003c/div\u003e"
+}

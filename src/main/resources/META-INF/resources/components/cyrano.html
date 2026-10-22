@@ -1,0 +1,61 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/cyrano-logo.png" alt="Cyrano" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Cyrano is the MicroProfile Rest Client 4.0 implementation of the Vidocq ecosystem. It turns a plain annotated Java interface (<code>@Path</code>, <code>@GET</code>, <code>@RegisterRestClient</code>) into a typed proxy that speaks HTTP on your behalf: the request, parameters, headers, JSON-B serialization and typed deserialization are all handled from the shadows — without dynamic reflection, without third-party libraries, and on virtual threads native to JDK 25.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The character of <strong>Cyrano de Bergerac</strong> — from Edmond Rostand&#8217;s play (1897), inspired by the French free-thinker Savinien de Cyrano de Bergerac (1619-1655) — lends Christian his eloquence, his verses, his feelings, from the shadow of the balcony. Christian only needs to mouth the words; the voice, the cadence, the metaphor all come from Cyrano. See <a href="https://en.wikipedia.org/wiki/Cyrano_de_Bergerac_(play)">the play on Wikipedia</a>.</p>
+</div>
+<div class="paragraph">
+<p>A type-safe REST client does exactly the same thing: the application calls <code>users.findById(42)</code> and Cyrano speaks HTTP in its name — builds the request, serializes the body, attaches headers, parses the response, deserializes the return type. The application only hears the typed voice; the protocol stays in the shadows.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 66.6667%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cyrano, the eloquent</th>
+<th class="tableblock halign-left valign-top">Cyrano, the Rest Client runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Speech for Christian under the balcony</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP call on behalf of application code</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lines spoken in cadence (rhythm, rhyme)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP request formed (method, path, headers, body)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voice carried but face hidden</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Typed interface — the remote service is invisible</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Borrowed metaphor, circulating image</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Build-time-generated proxy injected via DI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constraint of language: imposed alexandrine</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Constraint of the spec: <code>@Path</code>, <code>@GET</code>, <code>@RegisterRestClient</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roxane&#8217;s reply, interpreted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HTTP response deserialized into a typed value</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

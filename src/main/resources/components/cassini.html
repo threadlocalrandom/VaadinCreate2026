@@ -1,0 +1,53 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/cassini-logo.png" alt="Cassini" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Cassini is the Jakarta REST 4.0 implementation of the Vidocq ecosystem. It runs on top of <a href="../../chappe/0.3.0/index.html" class="xref page">Chappe</a> for HTTP transport, on <a href="../../vauban/0.3.0/index.html" class="xref page">Vauban</a> for CDI resolution, and on <a href="../../champollion/0.3.0/index.html" class="xref page">Champollion</a> for JSON serialization. Goal: 100 % TCK conformance on the Core Profile / SE-Bootstrap target, no ad-hoc reflection, no unjustified external dependency.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Giovanni Domenico Cassini</strong>, known in French as <strong>Jean-Dominique Cassini</strong> (1625–1712), Italian-French astronomer, first director of the Paris Observatory (1671). He founded the dynasty that produced the first complete map of France via geodetic triangulation — every point of the kingdom anchored to a hierarchical mesh of triangles, then to roads, then to named places.</p>
+</div>
+<div class="paragraph">
+<p>Reference: <a href="https://en.wikipedia.org/wiki/Giovanni_Domenico_Cassini">Cassini on Wikipedia</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cassini, the astronomer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cassini, the runtime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Geodetic triangulation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">URI templates <code>@Path("/a/{b}/c")</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hierarchical mesh kingdom → province → town</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Root resource → sub-resource locator → method</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reference meridian</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>UriInfo.getBaseUri()</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Single point per 3 angles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Best-match: single method per (path, verb, media-type)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The REST resource tree is a map. Cassini is the runtime that draws it and routes every request — over the signaling lines laid down by the optical telegraph of <a href="../../chappe/0.3.0/index.html" class="xref page">Chappe</a>.</p>
+</div>
+</div>

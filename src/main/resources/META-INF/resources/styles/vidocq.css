@@ -1,0 +1,568 @@
+:root {
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    --gray-950: #030712;
+
+    --brand-blue-50: #eff6ff;
+    --brand-blue-100: #dbeafe;
+    --brand-blue-200: #bfdbfe;
+    --brand-blue-300: #93c5fd;
+    --brand-blue-400: #60a5fa;
+    --brand-blue-500: #3b82f6;
+    --brand-blue-600: #1d4ed8;
+    --brand-blue-700: #1e40af;
+    --brand-blue-800: #1e3a8a;
+    --brand-blue-900: #172554;
+    --brand-blue-950: #0c1445;
+
+    --brand-gold-300: #fcd34d;
+    --brand-gold-400: #fbbf24;
+    --brand-gold-500: #f59e0b;
+
+    --font-body: "Fira Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-heading: "Fira Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-code: "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+    --lumo-font-family: var(--font-body);
+    --lumo-primary-color: var(--brand-blue-600);
+    --lumo-primary-color-50pct: rgba(29, 78, 216, 0.5);
+    --lumo-primary-color-10pct: rgba(29, 78, 216, 0.1);
+    --lumo-body-text-color: var(--gray-800);
+    --lumo-base-color: #ffffff;
+    --lumo-header-text-color: var(--gray-900);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--gray-50);
+    color: var(--gray-800);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* App root container */
+.vidocq-app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--gray-50);
+}
+
+/* Navbar */
+.vidocq-navbar {
+    width: 100%;
+    background: linear-gradient(135deg, var(--brand-blue-950) 0%, #0f172a 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1.5rem;
+    min-height: 60px;
+    height: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.vidocq-navbar-inner {
+    width: 100%;
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vidocq-navbar-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    margin: 0 auto;
+}
+
+.vidocq-navbar-brand:hover {
+    opacity: 0.85;
+}
+
+.vidocq-navbar-logo {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.vidocq-navbar-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ffffff;
+    letter-spacing: -0.01em;
+}
+
+.vidocq-navbar-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--brand-blue-300);
+    background: rgba(59, 130, 246, 0.18);
+    border: 1px solid rgba(147, 197, 253, 0.3);
+    border-radius: 9999px;
+    padding: 2px 10px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.vidocq-navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.vidocq-navbar-tag {
+    font-family: var(--font-code);
+    font-size: 0.8rem;
+    color: var(--brand-gold-400);
+    background: rgba(251, 191, 36, 0.12);
+    border: 1px solid rgba(251, 191, 36, 0.3);
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+/* Main Content Area */
+.vidocq-main-content {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2.5rem 1.5rem 3.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    gap: 2rem;
+}
+
+/* Hero Section */
+.vidocq-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vidocq-hero > * {
+    text-align: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vidocq-hero-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    display: block;
+    filter: drop-shadow(0 8px 16px rgba(12, 20, 69, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.vidocq-hero-logo:hover {
+    transform: scale(1.04);
+}
+
+.vidocq-hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--brand-blue-950);
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    width: 100%;
+    align-self: center;
+}
+
+.vidocq-hero-subtitle {
+    font-size: 1.15rem;
+    color: var(--gray-600);
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 680px;
+    width: 100%;
+    align-self: center;
+}
+
+/* Card / Interactive Box */
+.vidocq-card {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 680px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.25rem;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.vidocq-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    border-color: var(--gray-300);
+}
+
+.vidocq-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--gray-100);
+    padding-bottom: 1rem;
+}
+
+.vidocq-card-title {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.vidocq-input-field {
+    width: 100%;
+}
+
+.vidocq-input-field vaadin-text-field {
+    width: 100%;
+}
+
+/* Greeting Callout / Admonition Box */
+.vidocq-admonition {
+    background: var(--brand-blue-50);
+    border-left: 4px solid var(--brand-blue-600);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: var(--brand-blue-950);
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.vidocq-admonition-icon {
+    color: var(--brand-blue-600);
+    font-weight: bold;
+    font-size: 1.25rem;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.vidocq-admonition-text {
+    margin: 0;
+    font-weight: 500;
+    color: var(--brand-blue-900);
+}
+
+/* Component Selector */
+.vidocq-component-selector {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 680px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.vidocq-component-selector:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    border-color: var(--gray-300);
+}
+
+.vidocq-component-select {
+    min-width: 240px;
+    width: 100%;
+    max-width: 320px;
+}
+
+.vidocq-component-selector .vidocq-preamble,
+.vidocq-component-selector .vidocq-sect1 {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: none;
+    padding: 1.5rem 0 0 0;
+    border-top: 1px solid var(--gray-200);
+    border-radius: 0;
+}
+
+.vidocq-component-selector .vidocq-preamble:empty,
+.vidocq-component-selector .vidocq-sect1:empty,
+.vidocq-preamble:empty,
+.vidocq-sect1:empty,
+#preamble:empty,
+#section1:empty {
+    display: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+
+/* Preamble & Section 1 (Doc template styles) */
+.vidocq-preamble,
+#preamble,
+.preamble {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.vidocq-preamble .sectionbody,
+#preamble .sectionbody,
+.preamble .sectionbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.vidocq-preamble .imageblock,
+.vidocq-preamble .module-logo,
+.vidocq-preamble .imageblock.module-logo,
+#preamble .imageblock,
+#preamble .module-logo,
+#preamble .imageblock.module-logo,
+.preamble .imageblock,
+.preamble .module-logo,
+.imageblock.module-logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.25rem;
+}
+
+.vidocq-preamble .imageblock .content,
+.vidocq-preamble .module-logo .content,
+#preamble .imageblock .content,
+#preamble .module-logo .content,
+.preamble .imageblock .content,
+.imageblock.module-logo .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.vidocq-preamble .imageblock img,
+.vidocq-preamble .module-logo img,
+#preamble .imageblock img,
+#preamble .module-logo img,
+.preamble .imageblock img,
+.imageblock.module-logo img,
+.vidocq-preamble img,
+#preamble img,
+.preamble img,
+.vidocq-preamble-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+}
+
+.vidocq-preamble .paragraph.lead p {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--gray-700);
+    margin: 0;
+    text-align: left;
+}
+
+.vidocq-preamble .paragraph.lead a,
+.vidocq-sect1 .paragraph a {
+    color: var(--brand-blue-600);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.vidocq-preamble .paragraph.lead a:hover,
+.vidocq-sect1 .paragraph a:hover {
+    text-decoration: underline;
+    color: var(--brand-blue-700);
+}
+
+.vidocq-sect1,
+.sect1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.vidocq-sect1-title,
+.sect1 h2 {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--brand-blue-950);
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.vidocq-sect1 .paragraph p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray-700);
+    margin-top: 0;
+    margin-bottom: 0.85rem;
+}
+
+.vidocq-sect1 .paragraph:last-child p {
+    margin-bottom: 0;
+}
+
+/* Features Grid */
+.vidocq-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.5rem;
+    align-self: center;
+}
+
+.vidocq-feature-item {
+    background: #ffffff;
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.vidocq-feature-title {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--brand-blue-800);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.vidocq-feature-desc {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Footer */
+.vidocq-footer {
+    width: 100%;
+    background: var(--brand-blue-950);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.75rem 1.5rem;
+    box-sizing: border-box;
+    color: var(--gray-400);
+    font-size: 0.85rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.vidocq-footer-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+}
+
+.vidocq-footer-copy {
+    color: var(--gray-300);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+.vidocq-footer-meta {
+    font-size: 0.8rem;
+    color: var(--gray-400);
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+}

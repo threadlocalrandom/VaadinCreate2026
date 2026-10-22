@@ -1,0 +1,61 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/grimm-logo.png" alt="Grimm" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Grimm is the MicroProfile OpenAPI 4.1 implementation of the Vidocq ecosystem. It scans the annotations scattered across JAX-RS resources, merges them with an optional static document and an optional <code>OASModelReader</code>, applies <code>OASFilter</code> filters, and publishes a unified OpenAPI 3.1 document on <code>/openapi</code>. Goal: 100 % MicroProfile OpenAPI 4.1 TCK conformance (currently 349/349), zero external dependency, strict Java Modules, jlink-ready.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Jacob (1785-1863) and Wilhelm Grimm (1786-1859)</strong>, Prussian linguists and philologists. Authors of <em>Kinder- und Hausmärchen</em> (the <em>Fairy Tales</em>) and of the <em>Deutsches Wörterbuch</em>, founders of modern Germanic philology. See <a href="https://fr.wikipedia.org/wiki/Fr%C3%A8res_Grimm">the Wikipedia article</a>.</p>
+</div>
+<div class="paragraph">
+<p>The Grimms gathered scattered oral tradition — tales, legends, word roots — and indexed, classified, and published it as an ordered catalogue. The <em>Wörterbuch</em> set out to record every attested German word with its variants, derivations, and occurrences. Grimm the runtime does exactly that for OpenAPI annotations: it gathers the <code>@Operation</code>, <code>@Parameter</code>, <code>@Schema</code>, <code>@OpenAPIDefinition</code> declarations scattered across the JAX-RS codebase, classifies them by path and HTTP verb, and produces a unified OpenAPI 3.1 document at startup. The folklorist becomes a compiler of API contracts.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">The Grimm brothers, philologists</th>
+<th class="tableblock halign-left valign-top">Grimm, the OpenAPI runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Collecting scattered oral tales</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Scanning <code>@Operation</code>, <code>@Parameter</code>, <code>@Schema</code> annotations</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Indexing by motif (roots, phonetic variants)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Catalogue keyed by (path, HTTP verb) pairs</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Deutsches Wörterbuch</em> — reasoned dictionary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unified OpenAPI 3.1 document delivered to the client</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Critical edition — variants, sources, attestations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Merge of <code>OASModelReader</code> + static file + annotations + filters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Grimm&#8217;s Law — phonetic transformation rules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ConfigApplier</code> pipeline — rules driven by <code>mp.openapi.*</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Distribution via press and bookshops</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>GET /openapi</code> endpoint (YAML by default, JSON on request)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

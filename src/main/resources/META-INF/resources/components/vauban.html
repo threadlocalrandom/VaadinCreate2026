@@ -1,0 +1,22 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/vauban-logo.png" alt="Vauban" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Vauban is a CDI 4.1 container that resolves injection at compile time. Native Java Modules, zero runtime dependency, no dynamic proxies — dependency wiring computed like artillery trajectories: drawn on paper before the first shovel of dirt is turned.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Sébastien Le Prestre, marquis de Vauban (1633-1707), Marshal of France, military engineer to Louis XIV. Designer of the <em>ceinture de fer</em>, author of the <em>Treatise on the Attack and Defence of Fortresses</em>. See <a href="https://fr.wikipedia.org/wiki/S%C3%A9bastien_Le_Prestre_de_Vauban">the Wikipedia article</a>.</p>
+</div>
+<div class="paragraph">
+<p>Vauban turned defence into a mathematical art: trajectories, sapping, counter-mining, all computed in advance. The Vauban container brings the same discipline to CDI. Every <code>@Inject</code> relationship is resolved at <code>process-classes</code>. An <code>Indexer</code> enumerates beans, a <code>Processor</code> emits <code>_Factory</code> bytecode via the Class-File API. At runtime, nothing is computed — only instantiation remains. The fortifications stand before the first request hits.</p>
+</div>
+</div>

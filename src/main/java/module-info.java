@@ -1,4 +1,4 @@
-module org.tlr {
+open module org.tlr {
     requires flow.server;
     requires flow.html.components;
     requires flow.data;
@@ -7,4 +7,6 @@ module org.tlr {
     requires vaadin.ordered.layout.flow;
     requires io.vidocq.foy.api;
     requires jakarta.servlet;
+
+    exports org.tlr;
 }

@@ -37,9 +37,13 @@ This runs the Vaadin Maven plugin to prepare and build the frontend, then packag
 
 ### Run
 
-The application runs via the Vidocq runtime. Check the Vidocq documentation for the specific launch command, or use the Maven plugin:
-mvn vidocq:dev
+Use `vidocq:dev` with production mode JVM args. **Do not use `vidocq:run`** — it re-runs `prepare-frontend` without `build-frontend`, causing the frontend bundle to be missing and the loading banner to hang.
 
+```git bash
+mvn vidocq:dev '-Dvidocq.dev.jvmArgs=-Dvaadin.productionMode=true'
+```
+
+For a one-time frontend preparation only:
 ```git bash
 mvn compile vaadin:prepare-frontend
 ```
@@ -67,5 +71,6 @@ The application follows a simple three-component structure:
 - Service classes should be simple and stateless unless persistence is explicitly required.
 - Do not add new dependencies without a clear need; the Vidocq parent manages most versions.
 - **Never use Vaadin development mode** — the application is configured for production mode only via the `vaadin.productionMode=true` property in `pom.xml`.
+- **Never use `vidocq:run`** — it causes the frontend bundle to be missing and the loading banner to hang. Always use `vidocq:dev` with production mode JVM args instead.
 - always refer to the Vidocq documentation for best practices and guidelines.
 - refer to the docs/Vaadin on Vidocq_ from vidocq_dev to a 68 MB jlink Image - Vidocq.pdf for additional guidance.

@@ -47,6 +47,10 @@
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-lumo-theme</artifactId>
+        </dependency>
         <!-- The precompiled frontend of the core components: production mode without Node. -->
         <dependency>
             <groupId>com.vaadin</groupId>

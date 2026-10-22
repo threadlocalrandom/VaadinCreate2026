@@ -1,4 +1,4 @@
-open module org.tlr {
+module org.tlr {
     requires flow.server;
     requires flow.html.components;
     requires flow.data;

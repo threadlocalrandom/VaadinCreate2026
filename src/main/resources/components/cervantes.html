@@ -1,0 +1,68 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/cervantes-logo.png" alt="Cervantes" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Cervantes is the MicroProfile JWT 2.1 implementation of the Vidocq ecosystem. It validates signed (and optionally encrypted) JWT bearer tokens using <code>java.security</code> exclusively, parses JSON through <a href="../../champollion/0.3.0/index.html" class="xref page">Champollion</a>, reads its configuration through <a href="../../ravel/0.3.0/index.html" class="xref page">Ravel</a>, exposes the <code>JsonWebToken</code> principal in CDI through <a href="../../vauban/0.3.0/index.html" class="xref page">Vauban</a>, and enforces <code>@RolesAllowed</code> on JAX-RS endpoints through <a href="../../cassini/0.3.0/index.html" class="xref page">Cassini</a>. Goal: 100 % conformance to the MicroProfile JWT 2.1 TCK (achieved, <strong>206 / 206</strong> at M6), zero third-party crypto or JWT library, strict Java Modules, jlink-ready.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Miguel de Cervantes (1547-1616)</strong>, Spanish writer. Author of <em>The Ingenious Hidalgo Don Quixote of La Mancha</em> (1605 / 1615), the first great work of modern literature. See <a href="https://en.wikipedia.org/wiki/Miguel_de_Cervantes">the Wikipedia article</a>.</p>
+</div>
+<div class="paragraph">
+<p>Don Quixote is not knighted: he <em>proclaims himself</em> a knight-errant and carries with him the proofs of his rank — arms painted on his shield, copied letters patent, a heraldic narrative recited at every encounter. The picaresque story runs on that very mechanism: every interlocutor receives the claim, examines it, holds it as true or as folly. Cervantes invented the fiction of the <em>bearer of a signed identity</em> — a character travelling with his own credentials and demanding that the world verify them.</p>
+</div>
+<div class="paragraph">
+<p>A JWT is exactly that: a bearer token that presents a signed identity on every HTTP request, and that each service verifies locally, without contacting a central authority. Cervantes the runtime, unlike the windmills of La Mancha, does not take the bearer&#8217;s claims at face value: it actually verifies the signature, issuer, audience and expiration, and grants a role only after the check.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Cervantes, the writer</th>
+<th class="tableblock halign-left valign-top">Cervantes, the JWT runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Don Quixote carries his letters patent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Each request carries its <code>Authorization: Bearer ey…</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local verification, no king to consult</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Local validation via public key (offline, no callback to the issuer)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Heraldic narrative: name, arms, lineage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Claims: <code>iss</code>, <code>sub</code>, <code>aud</code>, <code>groups</code>, <code>roles</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Donor&#8217;s seal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital signature (RS256, ES256, …)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dated and expirable letters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>exp</code>, <code>nbf</code>, <code>iat</code> with clock-skew tolerance</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lineage proved by a chain of witnesses</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Chain of trust via the JWK Set published at <code>iss</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Knighthood disputed by the curate and the barber</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">401 if the signature lies, 403 if the role is missing</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

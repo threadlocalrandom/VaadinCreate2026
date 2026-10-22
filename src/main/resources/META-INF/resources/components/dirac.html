@@ -1,0 +1,61 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/dirac-logo.png" alt="Dirac" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Dirac is the MicroProfile Metrics 5.1.1 implementation of the Vidocq ecosystem. It measures the runtime state of an application — counters, gauges, histograms, timers — and exposes it as OpenMetrics / Prometheus text and JSON, without ever altering the observable through observation. CDI annotations (<code>@Counted</code>, <code>@Timed</code>, <code>@Gauge</code>) are wired through <a href="../../vauban/0.3.0/index.html" class="xref page">Vauban</a>, the optional <code>GET /metrics</code> endpoint is served by <a href="../../cassini/0.3.0/index.html" class="xref page">Cassini</a>, and <code>mp.metrics.distribution.*</code> configuration is read from system properties and <code>META-INF/microprofile-config.properties</code> — no MicroProfile Config dependency.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Paul Dirac (1902-1984)</strong>, English physicist, Nobel Prize 1933. Author of the Dirac equation (the relativistic equation of the electron, 1928), he predicted the existence of antimatter through pure mathematical symmetry and laid, with Fermi, the statistics of fermion occupation. See <a href="https://en.wikipedia.org/wiki/Paul_Dirac">the Wikipedia article</a>.</p>
+</div>
+<div class="paragraph">
+<p>Dirac built the formal frame that separates the observable from the instrument — his bra-ket notation orders quantum measurement without confusing the state with the gesture that probes it. The Dirac runtime applies the same discipline to application metrics: no <code>synchronized</code>, no <code>ThreadLocal</code>, <code>LongAdder</code>-backed counters with no contention, and <code>System.nanoTime()</code> everywhere for time resolution. Instrumentation stays orthogonal to business code, never intrusive on the hot path.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Paul Dirac, the physicist</th>
+<th class="tableblock halign-left valign-top">Dirac, the metrics runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dirac equation — relativistic formalism of the electron</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MP Metrics 5.1.1 model — Counter, Gauge, Histogram, Timer</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Predicting antimatter by symmetry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Negative counters allowed (deltas), non-blocking <code>LongAdder</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fermi-Dirac statistics — discrete occupation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discrete-bucket histograms, p50–p999 percentiles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dirac constant (<code>ℏ</code>) — fundamental quantum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>System.nanoTime()</code> — minimal runtime resolution</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bra-ket notation — observable orthogonal to state</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Instrumentation orthogonal to business code (interceptors)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quantum measurement without disturbing the state</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Zero <code>synchronized</code>, zero <code>ThreadLocal</code> on the hot path</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>

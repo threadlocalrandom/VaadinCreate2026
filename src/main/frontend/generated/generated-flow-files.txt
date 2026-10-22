@@ -6,7 +6,6 @@ flow\ReactAdapter.tsx
 flow\generated-flow-imports.d.ts
 flow\generated-flow-imports.js
 flow\generated-flow-webcomponent-imports.js
-index.html
 index.tsx
 jar-resources\BrowserHelpers.d.ts
 jar-resources\BrowserHelpers.js

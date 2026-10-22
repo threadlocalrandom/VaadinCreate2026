@@ -1,0 +1,59 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/humboldt-logo.png" alt="Humboldt" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Humboldt is the MicroProfile Telemetry 2.1 implementation of the Vidocq ecosystem. It rewrites its own OpenTelemetry SDK (traces, metrics, logs) directly on top of the public OTel API surface, and integrates with <a href="../../chappe/0.3.0/index.html" class="xref page">Chappe</a> for HTTP transport, <a href="../../vauban/0.3.0/index.html" class="xref page">Vauban</a> for CDI, and <a href="../../cassini/0.3.0/index.html" class="xref page">Cassini</a> for JAX-RS instrumentation; configuration comes from the standard <code>OTEL_*</code> environment variables and <code>otel.<strong></code> system properties. Goal: 100 % official TCK conformance, with no <code>opentelemetry-sdk</code> / <code>opentelemetry-exporter-</strong></code> dependency, no Netty, no gRPC stack.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Alexander von Humboldt</strong> (1769–1859), Prussian polymath, naturalist, geographer, explorer. The man who made the founding gesture of modern observability: <em>observe simultaneously, measure rigorously, correlate across layers</em>. On Chimborazo in 1802, he jointly recorded barometric pressure, temperature, terrestrial magnetism, humidity, fauna and flora — then drew the first isothermal maps revealing the planet&#8217;s hidden invariants. He invented the <em>Naturgemälde</em>, the first scientific data visualization, and synthesized all his knowledge in <em>Kosmos</em>.</p>
+</div>
+<div class="paragraph">
+<p>Reference: <a href="https://en.wikipedia.org/wiki/Alexander_von_Humboldt">Humboldt on Wikipedia</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Humboldt the explorer</th>
+<th class="tableblock halign-left valign-top">Humboldt the runtime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Simultaneous observation (pressure, temperature, magnetism)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Three pillars: traces, metrics, logs (one SDK)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Isothermal maps</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aggregated views per dimension (correlated results)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Voyages covering every layer (sea, plain, summit)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cross-cutting instrumentation (web → DB → external)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Kosmos</em> — global synthesis of natural knowledge</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Unified OpenTelemetry document (W3C TraceContext + OTLP)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network of magnetic stations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Network of processors / exporters / propagators</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>OpenTelemetry is the <em>Naturgemälde</em> of distributed systems. Humboldt embeds it natively in Java SE.</p>
+</div>
+</div>

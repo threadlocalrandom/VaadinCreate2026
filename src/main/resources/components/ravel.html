@@ -1,0 +1,66 @@
+﻿<div id="preamble" class="vidocq-card vidocq-preamble preamble">
+  <div class="sectionbody">
+    <div class="imageblock module-logo">
+<div class="content">
+<img src="images/ravel-logo.png" alt="Ravel" width="300">
+</div>
+</div>
+<div class="paragraph lead">
+<p>Ravel is the MicroProfile Config 3.1 implementation of the Vidocq ecosystem. It implements the full configuration abstraction layer for Jakarta EE / MicroProfile applications: aggregation of multiple sources (system properties, environment variables, <code>microprofile-config.properties</code>), type conversion, property expressions, configuration profiles, and CDI integration via <a href="../../vauban/0.3.0/index.html" class="xref page">Vauban</a>. Goal: 100 % MicroProfile Config 3.1 TCK conformance, zero external dependencies, strict Java Modules, jlink-ready.</p>
+</div>
+  </div>
+</div>
+<div class="sect1">
+<h2 id="origin-of-the-name"><a class="anchor" href="#origin-of-the-name"></a>Origin of the name</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Maurice Ravel</strong> (1875-1937) was a master of orchestration - he knew how to weave disparate sources (strings, winds, percussion) into a coherent and hierarchical whole.
+This is exactly what a configuration system does: aggregate heterogeneous sources (files, environment variables, system properties) into a unified configuration.</p>
+</div>
+<div class="paragraph">
+<p>Reference: <a href="https://en.wikipedia.org/wiki/Maurice_Ravel">Ravel on Wikipedia</a>.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ravel, the composer</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ravel, the configuration runtime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">String section</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System properties</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Wind section</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Environment variables</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Percussion section</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>microprofile-config.properties</code> and custom sources</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Orchestration score</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Config sources hierarchy (ordinal)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Harmonic resolution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type converters and implicit converters</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Thematic development</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Property expressions (${key}, ${key:default})</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Movement structure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration profiles (<code>%dev.</code>, <code>%prod.</code>, <code>%test.</code>)</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Ravel orchestrates all these voices into a single, unified configuration accessible via <code>ConfigProvider.getConfig()</code> and optionally injected via CDI with <code>@ConfigProperty</code>.</p>
+</div>
+</div>

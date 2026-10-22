@@ -1,0 +1,10 @@
+﻿{
+    "id":  "knock",
+    "name":  "Knock",
+    "role":  "MicroProfile Health 4.0 implementation",
+    "repository":  "https://codefloe.com/Vidocq/knock",
+    "docUrl":  "https://doc.vidocq.dev/knock/0.3.0/index.html",
+    "logo":  "images/knock-logo.png",
+    "preambleHtml":  "\u003cdiv class=\"imageblock module-logo\"\u003e\r\n\u003cdiv class=\"content\"\u003e\r\n\u003cimg src=\"images/knock-logo.png\" alt=\"Knock\" width=\"300\"\u003e\r\n\u003c/div\u003e\r\n\u003c/div\u003e\r\n\u003cdiv class=\"paragraph lead\"\u003e\r\n\u003cp\u003eKnock is the health subsystem of the Vidocq runtime. It implements MicroProfile Health 4.0 with zero third-party libraries — only Jakarta EE and MicroProfile specifications. Health checks are discovered through CDI, exposed over Jakarta REST, serialised with Jakarta JSON-P, and executed on virtual threads.\u003c/p\u003e\r\n\u003c/div\u003e",
+    "originHtml":  "\u003cdiv class=\"sect1\"\u003e\r\n\u003ch2 id=\"origin-of-the-name\"\u003e\u003ca class=\"anchor\" href=\"#origin-of-the-name\"\u003e\u003c/a\u003eOrigin of the name\u003c/h2\u003e\r\n\u003cdiv class=\"sectionbody\"\u003e\r\n\u003cdiv class=\"paragraph\"\u003e\r\n\u003cp\u003e\u003cem\u003eKnock, or the Triumph of Medicine\u003c/em\u003e (« Knock, ou le Triomphe de la médecine ») is a 1923 comedy by Jules Romains. Doctor Knock turns a whole village into patients under permanent observation — \u003cem\u003e\"every healthy person is a sick person who doesn\u0026#8217;t know it yet\"\u003c/em\u003e. The Knock module applies the same relentless auscultation to a running application: liveness, readiness and startup probes keep every component under continuous diagnosis.\u003c/p\u003e\r\n\u003c/div\u003e\r\n\u003c/div\u003e"
+}

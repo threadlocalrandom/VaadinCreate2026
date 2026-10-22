@@ -11,16 +11,22 @@
           <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-processor/0.4.0-SNAPSHOT/vauban-processor-0.4.0-SNAPSHOT.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-core/0.4.0-SNAPSHOT/vauban-core-0.4.0-SNAPSHOT.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-api/0.4.0-SNAPSHOT/vauban-api-0.4.0-SNAPSHOT.jar" />
-          <entry name="$MAVEN_REPOSITORY$/jakarta/enterprise/jakarta.enterprise.cdi-api/4.1.0/jakarta.enterprise.cdi-api-4.1.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/6.0.0/jakarta.el-api-6.0.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/jakarta/interceptor/jakarta.interceptor-api/2.2.0/jakarta.interceptor-api-2.2.0.jar" />
-          <entry name="$MAVEN_REPOSITORY$/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar" />
           <entry name="$MAVEN_REPOSITORY$/jakarta/enterprise/jakarta.enterprise.lang-model/4.1.0/jakarta.enterprise.lang-model-4.1.0.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-classloader/0.4.0-SNAPSHOT/vauban-classloader-0.4.0-SNAPSHOT.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-indexer/0.4.0-SNAPSHOT/vauban-indexer-0.4.0-SNAPSHOT.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-classloader-spi/0.4.0-SNAPSHOT/vauban-classloader-spi-0.4.0-SNAPSHOT.jar" />
           <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-weaver/0.4.0-SNAPSHOT/vauban-weaver-0.4.0-SNAPSHOT.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/vidocq/runtime/extensions/jakartaee/web/vidocq-runtime-foy-servlet-extension-codegen/0.4.0-SNAPSHOT/vidocq-runtime-foy-servlet-extension-codegen-0.4.0-SNAPSHOT.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/vidocq/foy/foy-processor/0.4.0-SNAPSHOT/foy-processor-0.4.0-SNAPSHOT.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/vidocq/foy/foy-cdi-vauban/0.4.0-SNAPSHOT/foy-cdi-vauban-0.4.0-SNAPSHOT.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/vidocq/foy/foy-api/0.4.0-SNAPSHOT/foy-api-0.4.0-SNAPSHOT.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/servlet/jakarta.servlet-api/6.1.0/jakarta.servlet-api-6.1.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/io/vidocq/vauban/vauban-webcontexts/0.4.0-SNAPSHOT/vauban-webcontexts-0.4.0-SNAPSHOT.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/enterprise/jakarta.enterprise.cdi-api/4.1.0/jakarta.enterprise.cdi-api-4.1.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/6.0.0/jakarta.el-api-6.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/interceptor/jakarta.interceptor-api/2.2.0/jakarta.interceptor-api-2.2.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar" />
         </processorPath>
         <module name="vaadin-create-2026" />
       </profile>

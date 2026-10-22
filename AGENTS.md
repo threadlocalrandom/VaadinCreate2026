@@ -24,10 +24,10 @@
 | `vite.config.ts` | Vite frontend configuration |
 
 ## Building & Running
-
+Always use git bash
 ### Build
 
-```powershell
+```git bash
 mvn clean package
 ```
 
@@ -36,8 +36,9 @@ This runs the Vaadin Maven plugin to prepare and build the frontend, then packag
 ### Run
 
 The application runs via the Vidocq runtime. Check the Vidocq documentation for the specific launch command, or use the Maven plugin:
+mvn vidocq:run
 
-```powershell
+```git bash
 mvn compile vaadin:prepare-frontend
 ```
 

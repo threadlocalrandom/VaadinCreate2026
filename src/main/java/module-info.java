@@ -8,6 +8,8 @@ module org.tlr {
     requires vaadin.ordered.layout.flow;
     requires io.vidocq.foy.api;
     requires jakarta.servlet;
+    // Vaadin's Lookup finds AppShell in a jlink image.
+    requires io.vidocq.runtime.extensions.jakartaee.web.vaadin;
     // Vaadin creates the routes by reflection.
     opens org.tlr;
 }

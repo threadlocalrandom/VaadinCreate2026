@@ -6,7 +6,7 @@ Demo of a modern, lightweight Vaadin 25 application powered by the Vidocq runtim
 
 - **Java**: Java 25
 - **Framework**: Vaadin 25.3.3 (Flow, Lumo theme, styled after the Vidocq documentation)
-- **Runtime**: Vidocq Runtime (`io.vidocq.runtime:vidocq-runtime-parent:0.4.0-SNAPSHOT`)
+- **Runtime**: Vidocq Runtime (`io.vidocq.runtime:vidocq-runtime-parent:0.4.0-RC1`)
 - **Servlet Container**: Foy Servlet 6.1
 - **Build**: Maven with Vaadin Maven plugin
 
@@ -56,13 +56,20 @@ mvn test -Dtest=ComponentSelectionTest
 
 ## Running the Application
 
-Start the application using `vidocq:dev` with production mode JVM arguments:
+`vidocq:dev` and `vidocq:run` work from an empty `target/`: `vaadin-maven-plugin`'s `build-frontend` is bound to `process-classes`, and
+`vidocq:dev` builds the project first (`mvn process-classes`) when `target/classes` is empty, and says so.
+Production mode is set in `pom.xml` for every goal.
 
-```bash
-mvn vidocq:dev '-Dvidocq.dev.jvmArgs=-Dvaadin.productionMode=true'
-```
+| Mode | Command | Start |
+|------|---------|-------|
+| Development, reloaded on every change | `mvn vidocq:dev` | http://localhost:8080 |
+| Run, as in production | `mvn vidocq:run` | http://localhost:8080 |
+| Packaged distribution (needs a JDK 25) | `mvn clean package vidocq:package` | `target/vaadin-create-2026-1.0-SNAPSHOT/bin/vaadin-create-2026.sh` |
+| Self-contained image with its own JDK | `mvn -Pjlink clean package vidocq:jlink` | `JDK_JAVA_OPTIONS=-Dvaadin.productionMode=true target/dist/bin/vaadin-create-2026` |
 
-> **Important**: Always use `vidocq:dev` with `-Dvaadin.productionMode=true`. Do not use `vidocq:run`, as it re-runs `prepare-frontend` without `build-frontend`, which can cause frontend bundle loading issues.
+The `jlink` profile runs `vauban:modularize`, since no Vaadin jar is a named module, and sets the two flags Vaadin's
+layout needs. `vidocq-runtime-vaadin-extension` lets Vaadin find `AppShell` inside the image: without it, the first
+request gets no answer there.
 
 ### Accessing the Application
 

@@ -7,7 +7,7 @@
 ### Tech Stack
 
 - **Backend**: Java with Vaadin 25.3.3
-- **Runtime**: Vidocq Runtime (parent POM `io.vidocq.runtime:vidocq-runtime-parent:0.4.0-SNAPSHOT`)
+- **Runtime**: Vidocq Runtime (parent POM `io.vidocq.runtime:vidocq-runtime-parent:0.4.0-RC1`)
 - **Build**: Maven with Vaadin Maven plugin
 - **Frontend**: Vite, TypeScript (Vaadin Flow handles frontend compilation)
 - **Theme**: Lumo (default Vaadin theme)
@@ -37,10 +37,19 @@ This runs the Vaadin Maven plugin to prepare and build the frontend, then packag
 
 ### Run
 
-Use `vidocq:dev` with production mode JVM args. **Do not use `vidocq:run`** — it re-runs `prepare-frontend` without `build-frontend`, causing the frontend bundle to be missing and the loading banner to hang.
+`vidocq:dev` and `vidocq:run` work from an empty `target/` (`build-frontend` is bound to `process-classes`, and `vidocq:dev` builds the project first when `target/classes` is empty). Production mode is set in `pom.xml` for every goal.
 
 ```git bash
-mvn vidocq:dev '-Dvidocq.dev.jvmArgs=-Dvaadin.productionMode=true'
+mvn vidocq:dev
+mvn vidocq:run
+```
+
+Distribution and self-contained image:
+
+```git bash
+mvn clean package vidocq:package
+mvn -Pjlink clean package vidocq:jlink
+JDK_JAVA_OPTIONS=-Dvaadin.productionMode=true target/dist/bin/vaadin-create-2026
 ```
 
 For a one-time frontend preparation only:
@@ -71,6 +80,8 @@ The application follows a simple three-component structure:
 - Service classes should be simple and stateless unless persistence is explicitly required.
 - Do not add new dependencies without a clear need; the Vidocq parent manages most versions.
 - **Never use Vaadin development mode** — the application is configured for production mode only via the `vaadin.productionMode=true` property in `pom.xml`.
-- **Never use `vidocq:run`** — it causes the frontend bundle to be missing and the loading banner to hang. Always use `vidocq:dev` with production mode JVM args instead.
+- **Keep `build-frontend` bound to `process-classes`** in `pom.xml` — at its default phase, `prepare-package`, `vidocq:run` and `vidocq:dev` have no frontend bundle on an empty `target/`.
+- **Keep `vidocq-runtime-vaadin-extension`** — without it, `AppShell` breaks the jlink image (first request never answers).
+- The parent wires each Vidocq extension's codegen bundle into the compiler: do not add `annotationProcessorPaths`.
 - always refer to the Vidocq documentation for best practices and guidelines.
 - refer to the docs/Vaadin on Vidocq_ from vidocq_dev to a 68 MB jlink Image - Vidocq.pdf for additional guidance.

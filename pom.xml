@@ -7,7 +7,7 @@
     <parent>
         <groupId>io.vidocq.runtime</groupId>
         <artifactId>vidocq-runtime-parent</artifactId>
-        <version>0.4.0-SNAPSHOT</version>
+        <version>0.4.0-RC1</version>
     </parent>
 
     <groupId>org.tlr</groupId>
@@ -48,6 +48,12 @@
             <groupId>io.vidocq.runtime.extensions.jakartaee.web</groupId>
             <artifactId>vidocq-runtime-foy-servlet-extension</artifactId>
         </dependency>
+        <!-- AppShell is looked up through ServiceLoader from flow.server: in a jlink image, only this extension
+             lets it (BUG-20261023-06). It changes nothing under vidocq:dev, vidocq:run or vidocq:package. -->
+        <dependency>
+            <groupId>io.vidocq.runtime.extensions.jakartaee.web</groupId>
+            <artifactId>vidocq-runtime-vaadin-extension</artifactId>
+        </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-core</artifactId>
@@ -78,28 +84,22 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths combine.children="append">
-                        <path>
-                            <groupId>io.vidocq.runtime.extensions.jakartaee.web</groupId>
-                            <artifactId>vidocq-runtime-foy-servlet-extension-codegen</artifactId>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>com.vaadin</groupId>
                 <artifactId>vaadin-maven-plugin</artifactId>
                 <version>${vaadin.version}</version>
-                <configuration>
-                    <productionMode>true</productionMode>
-                </configuration>
                 <executions>
                     <execution>
+                        <id>prepare-frontend</id>
                         <goals>
                             <goal>prepare-frontend</goal>
+                        </goals>
+                    </execution>
+                    <!-- Bound to process-classes, not the default prepare-package: vidocq:run and vidocq:dev never reach
+                         prepare-package, so from an empty target/ they would have no frontend bundle. -->
+                    <execution>
+                        <id>build-frontend</id>
+                        <phase>process-classes</phase>
+                        <goals>
                             <goal>build-frontend</goal>
                         </goals>
                     </execution>
@@ -119,5 +119,40 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <!-- mvn -Pjlink clean package vidocq:jlink : a self-contained image with its own JDK. -->
+        <profile>
+            <id>jlink</id>
+            <properties>
+                <!-- flow-server and flow-react share com/vaadin/flow/server/frontend/, a split package jlink
+                     refuses: move those files into one module of the image. -->
+                <vidocq.jlink.mergeSharedResources>true</vidocq.jlink.mergeSharedResources>
+                <!-- flow-server's Lookup calls ServiceLoader for types of modules that require it: no legal
+                     descriptor exists. Patch it anyway; Collaboration Engine and LitTemplate then cannot be used. -->
+                <vauban.modularize.forceExplicit>true</vauban.modularize.forceExplicit>
+            </properties>
+            <build>
+                <plugins>
+                    <!-- jlink accepts named modules only, and no Vaadin jar is one. The parent manages the version. -->
+                    <plugin>
+                        <groupId>io.vidocq.vauban</groupId>
+                        <artifactId>vauban-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>modularize</id>
+                                <goals>
+                                    <goal>modularize</goal>
+                                </goals>
+                                <configuration>
+                                    <mode>all-automatic</mode>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

@@ -56,7 +56,7 @@ mvn test -Dtest=ComponentSelectionTest
 
 ## Running the Application
 
-Both work from an empty `target/`: `vaadin-maven-plugin`'s `build-frontend` is bound to `process-classes`, and
+`vidocq:dev` and `vidocq:run` work from an empty `target/`: `vaadin-maven-plugin`'s `build-frontend` is bound to `process-classes`, and
 `vidocq:dev` builds the project first (`mvn process-classes`) when `target/classes` is empty, and says so.
 Production mode is set in `pom.xml` for every goal.
 

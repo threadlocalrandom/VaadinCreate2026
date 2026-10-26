@@ -37,7 +37,7 @@ This runs the Vaadin Maven plugin to prepare and build the frontend, then packag
 
 ### Run
 
-Both work from an empty `target/` (`build-frontend` is bound to `process-classes`, and `vidocq:dev` builds the project first when `target/classes` is empty). Production mode is set in `pom.xml` for every goal.
+`vidocq:dev` and `vidocq:run` work from an empty `target/` (`build-frontend` is bound to `process-classes`, and `vidocq:dev` builds the project first when `target/classes` is empty). Production mode is set in `pom.xml` for every goal.
 
 ```git bash
 mvn vidocq:dev

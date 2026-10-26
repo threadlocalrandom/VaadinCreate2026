@@ -7,7 +7,7 @@
 ### Tech Stack
 
 - **Backend**: Java with Vaadin 25.3.3
-- **Runtime**: Vidocq Runtime (parent POM `io.vidocq.runtime:vidocq-runtime-parent:0.4.0-SNAPSHOT`)
+- **Runtime**: Vidocq Runtime (parent POM `io.vidocq.runtime:vidocq-runtime-parent:0.4.0-RC1`)
 - **Build**: Maven with Vaadin Maven plugin
 - **Frontend**: Vite, TypeScript (Vaadin Flow handles frontend compilation)
 - **Theme**: Lumo (default Vaadin theme)

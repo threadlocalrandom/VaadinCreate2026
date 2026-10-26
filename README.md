@@ -6,7 +6,7 @@ Demo of a modern, lightweight Vaadin 25 application powered by the Vidocq runtim
 
 - **Java**: Java 25
 - **Framework**: Vaadin 25.3.3 (Flow, Lumo theme, styled after the Vidocq documentation)
-- **Runtime**: Vidocq Runtime (`io.vidocq.runtime:vidocq-runtime-parent:0.4.0-SNAPSHOT`)
+- **Runtime**: Vidocq Runtime (`io.vidocq.runtime:vidocq-runtime-parent:0.4.0-RC1`)
 - **Servlet Container**: Foy Servlet 6.1
 - **Build**: Maven with Vaadin Maven plugin
 

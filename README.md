@@ -56,8 +56,8 @@ mvn test -Dtest=ComponentSelectionTest
 
 ## Running the Application
 
-Build once with `mvn clean package` first: `vidocq:dev` and `vidocq:run` do not run `build-frontend` nor process the
-Vaadin jars, so from a clean `target/` the page answers 404 (`dev`) or 500 _Unable to find index.html_ (`run`).
+Both work from an empty `target/`: `vaadin-maven-plugin`'s `build-frontend` is bound to `process-classes`, and
+`vidocq:dev` builds the project first (`mvn process-classes`) when `target/classes` is empty, and says so.
 Production mode is set in `pom.xml` for every goal.
 
 | Mode | Command | Start |

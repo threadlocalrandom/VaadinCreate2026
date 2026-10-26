@@ -37,7 +37,7 @@ This runs the Vaadin Maven plugin to prepare and build the frontend, then packag
 
 ### Run
 
-Build once with `mvn clean package` first: `vidocq:dev` and `vidocq:run` do not run `build-frontend` nor process the Vaadin jars, so from a clean `target/` the page answers 404 (`dev`) or 500 (`run`). Production mode is set in `pom.xml` for every goal.
+Both work from an empty `target/` (`build-frontend` is bound to `process-classes`, and `vidocq:dev` builds the project first when `target/classes` is empty). Production mode is set in `pom.xml` for every goal.
 
 ```git bash
 mvn vidocq:dev
@@ -80,7 +80,7 @@ The application follows a simple three-component structure:
 - Service classes should be simple and stateless unless persistence is explicitly required.
 - Do not add new dependencies without a clear need; the Vidocq parent manages most versions.
 - **Never use Vaadin development mode** — the application is configured for production mode only via the `vaadin.productionMode=true` property in `pom.xml`.
-- **Build before `vidocq:dev` or `vidocq:run`** — run `mvn clean package` first, or the frontend bundle is missing.
+- **Keep `build-frontend` bound to `process-classes`** in `pom.xml` — at its default phase, `prepare-package`, `vidocq:run` and `vidocq:dev` have no frontend bundle on an empty `target/`.
 - **Keep `vidocq-runtime-vaadin-extension`** — without it, `AppShell` breaks the jlink image (first request never answers).
 - The parent wires each Vidocq extension's codegen bundle into the compiler: do not add `annotationProcessorPaths`.
 - always refer to the Vidocq documentation for best practices and guidelines.
